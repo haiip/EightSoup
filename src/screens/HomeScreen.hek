@@ -1,0 +1,55 @@
+import React from 'react'
+import { TextInput } from 'react-native';
+import { View, Text, StyleSheet, Image, Button} from 'react-native';
+import { GoogleAutoComplete } from 'react-native-google-autocomplete';
+// import { API_KEY } from '';
+
+
+
+export class App extends React.Component {
+render() {
+return (
+  <View style={styles.container}>
+    <GoogleAutoComplete apiKey={API_KEY}>
+        {({}) => (
+            <React.Fragment>
+                <View>
+                        <TextInput 
+                        style={styles.TextInput} 
+                        placeholder="Search a place " />
+                </View>
+            </React.Fragment>
+        )}
+    </GoogleAutoComplete>
+</View>
+        );
+}
+
+}
+export const HomeScreen = ({ navigation }) => {
+return (
+<View>
+<Image 
+    source={require('./bilder/greenGod.jpg')}
+    style={{ width: 510, height: 600}}
+/>
+ <Button
+        title="Login"
+        onPress={() => navigation.navigate("Search")}
+      />
+</View>
+
+);
+};
+
+const styles = StyleSheet.create({
+TextInput: {
+height: 40,
+width: 300,
+borderWidth: 1,
+}
+});
+
+
+export default HomeScreen. App;
+
