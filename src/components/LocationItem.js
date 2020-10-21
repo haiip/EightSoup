@@ -1,37 +1,43 @@
-import React, { PureComponent } from 'react';
-import { View, Alert, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
+import React, { PureComponent } from "react";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import yelp from "../api/yelp";
 
 class LocationItem extends PureComponent {
-    _handPress = async () => {
-        const res = await this.props.fetchDetails(this.props.place_id)
-    
-        
-    
-}
-    
-    render () {
-        return (
-            <TouchableOpacity style={styles.root} onPress={this._handPress}>
-            <Text>{this.props.description}</Text>
-            
-            </TouchableOpacity>
+  handPress = async () => {
+    const res = await this.props.fetchDetails(this.props.place_id);
+    const { lat, lng } = res.geometry.location;
+    const response = await yelp.get("/search", {
+      params: {
+        limit: 10,
+        term: "resturants",
+        latitude: lat,
+        longitude: lng,
+        radius: 4000,
+      },
+    });
 
-        );
-    }
+    this.props.handleTextChange(this.props.description);
+    this.props.navigation.navigate("FoodScreen", {
+      businesses: response.data.businesses,
+      title: this.props.description,
+    });
+  };
+
+  render() {
+    return (
+      <TouchableOpacity style={styles.root} onPress={this.handPress}>
+        <Text>{this.props.description}</Text>
+      </TouchableOpacity>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-root: {
-height: 40,
-borderBottomWidth: StyleSheet.hairlineWidth,
-justifyContent: 'center'
-
-
-}
-
-
-
-})
+  root: {
+    height: 40,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    justifyContent: "center",
+  },
+});
 
 export default LocationItem;
