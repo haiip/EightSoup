@@ -29,15 +29,16 @@ export class HomeScreen extends React.Component {
             inputValue,
             clearSearch,
           }) => (
-            <React.Fragment>
+            <View>
               <View style={styles.inputWrapper}>
                 <TextInput
                   style={styles.TextInput}
                   placeholder="Search a place "
                   onChangeText={handleTextChange}
                   value={inputValue}
+                  padding={10}
                 />
-                <Button title="Clear" onPress={clearSearch} color="#4caf50" />
+                <Button title="Clear" onPress={clearSearch} color="#90EE81" />
               </View>
 
               {isSearching && <ActivityIndicator size="large" color="4caf50" />}
@@ -45,7 +46,7 @@ export class HomeScreen extends React.Component {
                 {locationResults.map((el) => (
                   <LocationItem
                     {...el}
-                    key={el.id}
+                    key={el.place_id}
                     fetchDetails={fetchDetails}
                     navigation={this.props.navigation}
                     handleTextChange={handleTextChange}
@@ -56,7 +57,7 @@ export class HomeScreen extends React.Component {
                 source={require("../bilder/greenGod.jpg")}
                 style={{ width: 100, height: 100 }}
               />
-            </React.Fragment>
+            </View>
           )}
         </GoogleAutoComplete>
       </View>

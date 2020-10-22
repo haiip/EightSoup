@@ -13,12 +13,22 @@ export default () => (
       <Stack.Screen
         name={"HomeScreen"}
         component={HomeScreen}
-        options={{ title: "Home" }}
+        options={{
+          title: "Home",
+          headerStyle: {
+            backgroundColor: "#90EE81",
+          },
+        }}
       />
       <Stack.Screen
         name={"FoodScreen"}
         component={FoodScreen}
-        options={{ title: "Food" }}
+        options={{
+          title: "Food",
+          headerStyle: {
+            backgroundColor: "#90EE81",
+          },
+        }}
       />
       <Stack.Screen
         name={"TestScreen"}

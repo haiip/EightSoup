@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-native";
 import { Text, View, Image } from "react-native";
 import styled from "styled-components/native";
 
@@ -7,7 +8,7 @@ const Container = styled.ScrollView`
   background-color: #fff;
 `;
 
-const Resturant = ({ resturant }) => (
+const Resturant = ({ resturant, navigation }) => (
   <View>
     <Text>name: {resturant.alias}</Text>
     <Text>Phone: {resturant.phone}</Text>
@@ -17,6 +18,8 @@ const Resturant = ({ resturant }) => (
       Adress:
       {`${resturant.location.address1} ${resturant.location.zip_code} ${resturant.location.city}`}
     </Text>
+
+    <Button title="hej" onPress={() => navigation.navigate("TestScreen")} />
 
     <Image
       source={{ uri: resturant.image_url }}
@@ -28,7 +31,7 @@ const Resturant = ({ resturant }) => (
 export function FoodScreen({ route, navigation }) {
   navigation.setOptions({ title: route.params.title });
   const resturants = route.params.businesses.map((r) => (
-    <Resturant key={r.id} resturant={r} />
+    <Resturant key={r.id} resturant={r} navigation={navigation} />
   ));
   return <Container>{resturants}</Container>;
 }

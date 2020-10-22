@@ -26,7 +26,7 @@ class LocationItem extends PureComponent {
   render() {
     return (
       <TouchableOpacity style={styles.root} onPress={this.handPress}>
-        <Text>{this.props.description}</Text>
+        <Text numberOfLines={1}>{this.props.description}</Text>
       </TouchableOpacity>
     );
   }
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderBottomWidth: StyleSheet.hairlineWidth,
     justifyContent: "center",
+    width: 300,
   },
 });
 
