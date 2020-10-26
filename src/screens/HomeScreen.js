@@ -7,7 +7,11 @@ import {
   ScrollView,
   ActivityIndicator,
   ImageBackground,
+  TouchableOpacity,
+  TouchableHighlight,
+  Image,
 } from "react-native";
+import { Card } from "react-native-elements";
 import { GoogleAutoComplete } from "react-native-google-autocomplete";
 
 import LocationItem from "../components/LocationItem";
@@ -16,6 +20,11 @@ export class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image
+          source={require("../bilder/Logga.png")}
+          style={styles.imageCard}
+        />
+
         <GoogleAutoComplete
           apiKey={"AIzaSyDPwtARzqKH1TYj6O1OLHYBY19h-G7gd7w"}
           debounce={500}
@@ -38,7 +47,21 @@ export class HomeScreen extends React.Component {
                   value={inputValue}
                   padding={10}
                 />
-                <Button title="Clear" onPress={clearSearch} color="#90EE81" />
+                <TouchableOpacity
+                  style={{
+                    height: 10,
+                    width: 10,
+                    borderRadius: 0,
+                    backgroundColor: "red",
+                    marginLeft: 0,
+                    marginRight: 0,
+                    marginTop: 20,
+                  }}
+                  title="Xsdgsdg"
+                  onPress={clearSearch}
+                  Text
+                  style="hejsan"
+                />
               </View>
 
               {isSearching && <ActivityIndicator size="large" color="4caf50" />}
@@ -72,10 +95,16 @@ const styles = StyleSheet.create({
   TextInput: {
     height: 40,
     width: 300,
-    borderWidth: 1,
+    borderBottomWidth: 1,
   },
   inputWrapper: {
     marginTop: 80,
     flexDirection: "row",
+  },
+  imageCard: {
+    height: 200,
+    width: 250,
+    marginTop: 200,
+    resizeMode: "contain",
   },
 });

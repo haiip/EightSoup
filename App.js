@@ -14,7 +14,7 @@ export default () => (
         name={"HomeScreen"}
         component={HomeScreen}
         options={{
-          title: "Home",
+          title: "Eight Soups",
           headerStyle: {
             backgroundColor: "#90EE81",
           },

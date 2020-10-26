@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Text, View, Image, StyleShee, StyleSheet } from "react-native";
 import { Card, Button, Icon } from "react-native-elements";
 
-const CardList = ({ title, text }) => {
+const CardList = ({ title, text, image }) => {
   const [counter, setCounter] = useState(0);
 
   return (
@@ -10,10 +10,7 @@ const CardList = ({ title, text }) => {
       <Card>
         <Card.Title>{title}</Card.Title>
         <Card.Divider />
-        <Image
-          source={require("./quinoa.jpg")}
-          style={{ height: 300, width: 350 }}
-        />
+        <Image source={image} style={{ height: 300, width: 350 }} />
         <Text style={{ marginBottom: 10 }}>{text}</Text>
         <Text>Current count:{counter} </Text>
         <Button
