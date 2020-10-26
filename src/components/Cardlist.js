@@ -1,8 +1,10 @@
-import React from "react";
-import { Text, View, Image } from "react-native";
+import React, { useState } from "react";
+import { Text, View, Image, StyleShee, StyleSheet } from "react-native";
 import { Card, Button, Icon } from "react-native-elements";
 
 const CardList = ({ title, text }) => {
+  const [counter, setCounter] = useState(0);
+
   return (
     <View>
       <Card>
@@ -13,21 +15,38 @@ const CardList = ({ title, text }) => {
           style={{ height: 300, width: 350 }}
         />
         <Text style={{ marginBottom: 10 }}>{text}</Text>
+        <Text>Current count:{counter} </Text>
         <Button
-          icon={<Icon name="shopping-basket" color="white" />}
           buttonStyle={{
-            borderRadius: 50,
+            borderRadius: 30,
             marginLeft: 0,
             marginRight: 220,
             marginBottom: 0,
             color: "#90EE81",
           }}
-          onPress
-          title="Order now"
+          title="+"
+          onPress={() => {
+            setCounter(counter + 1);
+          }}
+        />
+        <Button
+          buttonStyle={{
+            borderRadius: 30,
+            marginLeft: 0,
+            marginRight: 220,
+            marginBottom: 0,
+            color: "#90EE81",
+          }}
+          title="-"
+          onPress={() => {
+            setCounter(counter - 1);
+          }}
         />
       </Card>
     </View>
   );
 };
+
+const styles = StyleSheet.create({});
 
 export { CardList };
