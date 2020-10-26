@@ -18,6 +18,7 @@ export default () => (
           headerStyle: {
             backgroundColor: "#90EE81",
           },
+          headerTitleAlign: "center",
         }}
       />
       <Stack.Screen
@@ -33,7 +34,13 @@ export default () => (
       <Stack.Screen
         name={"TestScreen"}
         component={TestScreen}
-        options={{ title: "Test" }}
+        options={{
+          title: "Soups",
+          headerStyle: {
+            backgroundColor: "#90EE81",
+          },
+          headerTitleAlign: "center",
+        }}
       />
     </Stack.Navigator>
   </NavigationContainer>

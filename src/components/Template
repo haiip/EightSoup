@@ -1,0 +1,31 @@
+import React from "react";
+import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Card, ListItem, Button, Icon } from "react-native-elements";
+
+const FoodList = () => {
+  return (
+    <View>
+      <Card>
+        <Card.Title>hejsan</Card.Title>
+        <Card.Divider />
+        <Card.Image
+          source={require("../bilder/quinoa.jpg")}
+          style={{ width: 350, height: 200, resizeMode: "cover" }}
+        />
+        <Text style={{ marginBottom: 10 }}>lorsdgsgum</Text>
+        <Button
+          icon={<Icon name="code" color="#ffffff" />}
+          buttonStyle={{
+            borderRadius: 20,
+            marginLeft: 0,
+            marginRight: 200,
+            marginBottom: 0,
+          }}
+          title="Order now"
+        />
+      </Card>
+    </View>
+  );
+};
+
+export default { FoodList };

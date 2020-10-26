@@ -53,10 +53,6 @@ export class HomeScreen extends React.Component {
                   />
                 ))}
               </ScrollView>
-              <ImageBackground
-                source={require("../bilder/greenGod.jpg")}
-                style={{ width: 100, height: 100 }}
-              />
             </View>
           )}
         </GoogleAutoComplete>
