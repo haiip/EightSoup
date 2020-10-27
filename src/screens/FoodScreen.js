@@ -19,7 +19,7 @@ const Resturant = ({ resturant, navigation }) => (
       {`${resturant.location.address1} ${resturant.location.zip_code} ${resturant.location.city}`}
     </Text>
 
-    <Button title="hej" onPress={() => navigation.navigate("TestScreen")} />
+    <Button title="hej" onPress={() => navigation.navigate("AppScreen")} />
 
     <Image
       source={{ uri: resturant.image_url }}

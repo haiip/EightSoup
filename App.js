@@ -3,7 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { FoodScreen } from "./src/screens/FoodScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { HomeScreen } from "./src/screens/HomeScreen";
-import { TestScreen } from "./src/screens/TestScreen";
+
+import { AppScreen } from "./src/screens/AppScreen";
 
 const Stack = createStackNavigator();
 
@@ -32,8 +33,8 @@ export default () => (
         }}
       />
       <Stack.Screen
-        name={"TestScreen"}
-        component={TestScreen}
+        name={"AppScreen"}
+        component={AppScreen}
         options={{
           title: "Soups",
           headerStyle: {

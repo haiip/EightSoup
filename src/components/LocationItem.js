@@ -17,7 +17,7 @@ class LocationItem extends PureComponent {
     });
 
     this.props.handleTextChange(this.props.description);
-    this.props.navigation.navigate("TestScreen", {
+    this.props.navigation.navigate("AppScreen", {
       businesses: response.data.businesses,
       title: this.props.description,
     });
