@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { FoodScreen } from "./src/screens/FoodScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { HomeScreen } from "./src/screens/HomeScreen";
-
+import { ProductOverviewScreen } from "./src/screens/ProductsOverviewScreen";
 import { AppScreen } from "./src/screens/AppScreen";
 
 const Stack = createStackNavigator();
@@ -41,6 +41,16 @@ export default () => (
             backgroundColor: "#90EE81",
           },
           headerTitleAlign: "center",
+        }}
+      />
+      <Stack.Screen
+        name={"ProductOverviewScreen"}
+        component={ProductOverviewScreen}
+        options={{
+          title: "ProductOverviewScreen",
+          headerStyle: {
+            backgroundColor: "#90EE81",
+          },
         }}
       />
     </Stack.Navigator>
