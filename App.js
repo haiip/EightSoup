@@ -3,8 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { FoodScreen } from "./src/screens/FoodScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { HomeScreen } from "./src/screens/HomeScreen";
-import { ProductOverviewScreen } from "./src/screens/ProductsOverviewScreen";
-import { AppScreen } from "./src/screens/AppScreen";
+import ProductOverviewScreen from "./src/screens/ProductsOverviewScreen";
+import AppScreen from "./src/screens/AppScreen";
 
 const Stack = createStackNavigator();
 
